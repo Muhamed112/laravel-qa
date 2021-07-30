@@ -22,7 +22,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('questions', [QuestionsController::class, 'index']);
+Route::resource('questions', QuestionsController::class);
 
 require __DIR__.'/auth.php';
 
